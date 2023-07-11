@@ -1,5 +1,15 @@
 <h1>Contacts new</h1>
 
+<!-- Вывод списка ошиюок Вариант 2 в виде списка -->
+<% if @contact && @contact.errors.any? %> 
+  <h4>Список ошибок</h4>
+  <ul class="error-list">
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for :contact, url: contacts_path, data: {turbo:false} do |f| %>
 
   <p>
