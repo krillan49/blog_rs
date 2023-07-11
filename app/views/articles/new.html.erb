@@ -1,5 +1,15 @@
 <h1>Articles new</h1>
 
+<!-- Вывод списка ошиюок в виде списка -->
+<% if @article && @article.errors.any? %> 
+  <h4>Список ошибок</h4>
+  <ul class="error-list">
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for :article, url: '/articles', data: {turbo:false} do |f| %>
   <p>
 		<%= f.label :title %><br>
