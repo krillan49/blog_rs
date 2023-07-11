@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :articles
   
-  resource :contacts, only: [:new, :create]
+  get 'contacts' => 'contacts#new'
+  resource :contacts, only: [:create]
 end
