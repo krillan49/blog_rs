@@ -3,7 +3,11 @@ class ContactsController < ApplicationController
   end
   def create
     @contact = Contact.new(contact_params)
-    render action: 'new' if !@contact.save
+    if @contact.save
+      redirect_to '/contacts' # Post Redirect Get
+    else
+      render action: 'new'
+    end 
   end
 
   private
