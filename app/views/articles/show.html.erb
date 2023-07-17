@@ -29,10 +29,11 @@
 
 <%= 'Пока еще нет комментариев' if @article.comments.size == 1 %>
 
-<% @article.comments.each do |comment| %>
-
-  <p><b>Автор:</b> <%= comment.author %></p>
-  <p><%= comment.body %></p>
-  <hr>
+<% @article.comments.each.with_index do |comment, i| %>
+  <% if i != @article.comments.size - 1 %> <!-- Костыль для удаления лишнего пустого коммента -->
+    <p><b>Автор:</b> <%= comment.author %></p>
+    <p><%= comment.body %></p>
+    <hr>
+  <% end %>
 
 <% end %>

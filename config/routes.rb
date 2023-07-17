@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create]
   end
   
   get 'contacts' => 'contacts#new'
