@@ -10,7 +10,7 @@
   </ul>
 <% end %>
 
-<%= form_for :article, url: '/articles', data: {turbo:false} do |f| %>
+<%= form_for :article, url: articles_path, data: {turbo:false} do |f| %>
   <p>
 		<%= f.label :title %><br>
     <%= f.text_field :title %>
