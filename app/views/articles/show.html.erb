@@ -1,3 +1,38 @@
 <h1><%= @article.title %></h1>
 
 <p><%= @article.text %></p>
+
+
+<!--                                   Форма для комментариев -->
+
+<h2>Оставьте комментарий:</h2>
+
+<%= form_for([@article, @article.comments.build]) do |f| %>
+
+  <p>
+    <%= f.label :author %> <br> 
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :body %> <br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p><%= f.submit %></p>
+
+<% end %>
+
+
+<!--                                       Вывод комментариев -->
+
+<h2>Комментарии:</h2>
+
+<%= 'Пока еще нет комментариев' if @article.comments.size == 1 %>
+
+<% @article.comments.each do |comment| %>
+
+  <p><b>Автор:</b> <%= comment.author %></p>
+  <p><%= comment.body %></p>
+  <hr>
+
+<% end %>
