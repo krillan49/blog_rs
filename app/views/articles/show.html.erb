@@ -28,12 +28,9 @@
 <h2>Комментарии:</h2>
 
 <%= 'Пока еще нет комментариев' if @article.comments.size == 1 %>
-
-<% @article.comments.each.with_index do |comment, i| %>
-  <% if i != @article.comments.size - 1 %> <!-- Костыль для удаления лишнего пустого коммента -->
+<!-- Есть лишний коммент созданный формой, по порядку последний -->
+<% @article.comments[0..-2].each do |comment| %>
     <p><b>Автор:</b> <%= comment.author %></p>
     <p><%= comment.body %></p>
     <hr>
-  <% end %>
-
 <% end %>
