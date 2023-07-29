@@ -1,15 +1,30 @@
-<h1>List of articles</h1>
+<h1 class="text-center">List of articles</h1>
 
 <% @articles.each do |article| %>
-  <h3><%= article.title %></h3>
-  <p><%= article.text %></p>
 
+  <div class="card text-bg-light mt-4">
+    <div class="card-header">Article ID № <%= article.id %></div> 
+    <!-- <img src="" class="card-img-top" alt="дбз"> картинки мб потом добавить -->
+    <div class="card-body">
+      <h5 class="card-title"><%= article.title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Подзаголовок</h6>
+      <p class="card-text"><%= article.text %></p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="#" class="card-link link-info">Another link</a> -->
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <%= link_to "Show article", article_path(article) %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Edit article", edit_article_path(article) %>
+      </li>
+      <li class="list-group-item">
+        <%= button_to "Destroy article", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+      </li>
+    </ul>
+    <div class="card-footer text-muted">Created at: <%= article.created_at %></div>
+    <div class="card-footer text-muted">Updated at: <%= article.updated_at %></div> 
+  </div>
 
-  <p>
-    <%= link_to "Show article", article_path(article) %> | 
-    <%= link_to "Edit article", edit_article_path(article) %>
-  </p>
-  <p><%= button_to "Destroy", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %></p>
-
-  <hr>
 <% end %>
