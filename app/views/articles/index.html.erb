@@ -8,7 +8,9 @@
     <!-- <img src="" class="card-img-top" alt="дбз"> картинки мб потом добавить -->
     <div class="card-body">
       <h5 class="card-title"><%= article.title %></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Подзаголовок</h6>
+      <h6 class="card-subtitle mb-2 text-muted">
+        Автор: <%= article.user ? article.user.username : 'анонимус' %>
+      </h6>
       <p class="card-text"><%= article.text %></p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
       <a href="#" class="card-link link-info">Another link</a> -->
@@ -22,7 +24,7 @@
           <%= link_to "Edit article", edit_article_path(article) %>
         </li>
         <li class="list-group-item">
-          <%= button_to "Destroy article", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+          <%= button_to "Destroy article", article_path(article), method: :delete, class: 'btn btn-sm btn-outline-danger' %>
         </li>
       <% end %>
     </ul>
