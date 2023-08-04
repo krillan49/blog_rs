@@ -1,5 +1,6 @@
 <h1 class="text-center">List of articles</h1>
 
+
 <% @articles.each do |article| %>
 
   <div class="card text-bg-light mt-4">
@@ -16,12 +17,14 @@
       <li class="list-group-item">
         <%= link_to "Show article", article_path(article) %>
       </li>
-      <li class="list-group-item">
-        <%= link_to "Edit article", edit_article_path(article) %>
-      </li>
-      <li class="list-group-item">
-        <%= button_to "Destroy article", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
-      </li>
+      <% if current_user == article.user %>
+        <li class="list-group-item">
+          <%= link_to "Edit article", edit_article_path(article) %>
+        </li>
+        <li class="list-group-item">
+          <%= button_to "Destroy article", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+        </li>
+      <% end %>
     </ul>
     <div class="card-footer text-muted">Created at: <%= article.created_at %></div>
     <div class="card-footer text-muted">Updated at: <%= article.updated_at %></div> 
