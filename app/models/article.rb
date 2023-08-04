@@ -3,5 +3,5 @@ class Article < ApplicationRecord
   validates :text, presence: true
 
   has_many :comments
-  belongs_to :user
+  belongs_to :user, optional: true
 end
