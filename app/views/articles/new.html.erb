@@ -1,6 +1,6 @@
 <h1 class="text-center">Articles new</h1>
 
-<!-- Вывод списка ошиюок в виде списка -->
+<!-- Вывод списка ошибок в виде списка -->
 <% if @article && @article.errors.any? %> 
   <h4>Список ошибок</h4>
   <ul class="error-list">
@@ -12,20 +12,21 @@
 
 <%= form_for :article, url: articles_path, data: {turbo:false} do |f| %>
 
-  <p>
-    <%= current_user.username %><br>
+  <div class="mb-3">
+    <p>Автор: <%= current_user.username %></p>
     <%= f.hidden_field :user_id, value: current_user.id %>
-  </p>
+  </div>
 
-  <p>
-		<%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <div class="mb-3">
+		<%= f.label :title, class: 'form-label' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
+  <div class="mb-3">
+    <%= f.label :text, class: 'form-label' %>
+    <%= f.text_area :text, class: 'form-control' %>
+  </div>
 
-	<p><%= f.submit %></p>
+	<%= f.submit class: 'btn btn-outline-primary' %>
+  
 <% end %>

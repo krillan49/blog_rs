@@ -1,6 +1,6 @@
 <h1 class="text-center">Contacts new</h1>
 
-<!-- Вывод списка ошиюок Вариант 2 в виде списка -->
+<!-- Вывод списка ошибок Вариант 2 в виде списка -->
 <% if @contact && @contact.errors.any? %> 
   <h4>Список ошибок</h4>
   <ul class="error-list">
@@ -12,17 +12,16 @@
 
 <%= form_for :contact, url: contacts_path, data: {turbo:false} do |f| %>
 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </p>
+  <div class="mb-3">
+    <%= f.label :email, class: 'form-label' %><br>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
 
-  <p>
-    <%= f.submit 'Send message' %>
-  </p>
+  <div class="mb-3">
+    <%= f.label :message, class: 'form-label' %><br>
+    <%= f.text_area :message, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Send message', class: 'btn btn-outline-primary' %>
 
 <% end %>
