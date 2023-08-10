@@ -32,10 +32,12 @@
 
 <h4 class="mt-3">Комментарии:</h4>
 
-<%= 'Пока еще нет комментариев' if @article.comments.size == 1 %>
+<%= 'Пока еще нет комментариев' if @article.comments.empty? %>
 <!-- Есть лишний коммент созданный формой, по порядку последний -->
-<% @article.comments[0..-2].reverse.each do |comment| %>
+<% @article.comments.reverse.each do |comment| %>
+  <% if comment.body.size > 0 %>
     <p><b>Автор:</b> <%= comment.author %></p>
     <p><%= comment.body %></p>
     <hr>
+  <% end %>
 <% end %>

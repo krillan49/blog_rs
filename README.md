@@ -1,7 +1,8 @@
-# README
+# Blog(rubyschool)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby, Rails, Devise, Rspec.
+
+[Учебный проект на Ruby/Rails c курса Rubyschool](https://rubyschool.us/)
 
 Things you may want to cover:
 
@@ -23,6 +24,6 @@ Things you may want to cover:
 
 * ...
 
-Добавлено:
-
+Дополнено/изменено:
+-
 * Bootstrap 5
