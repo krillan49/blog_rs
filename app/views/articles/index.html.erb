@@ -15,21 +15,28 @@
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
       <a href="#" class="card-link link-info">Another link</a> -->
     </div>
+    
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        <%= link_to "Show article", article_path(article) %>
+        <div class="row text-center">
+          <div class="col-auto">
+            <%= link_to "Show article", article_path(article) %>
+          </div>
+          <% if user_signed_in? && current_user == article.user %>
+            <div class="col-auto">
+              <%= link_to "Edit article", edit_article_path(article) %>
+            </div>
+            <div class="col-auto">
+              <%= button_to "Destroy article", article_path(article), method: :delete, class: 'btn btn-sm btn-outline-danger' %>
+            </div>
+          <% end %>
+        </div>
       </li>
-      <% if current_user == article.user %>
-        <li class="list-group-item">
-          <%= link_to "Edit article", edit_article_path(article) %>
-        </li>
-        <li class="list-group-item">
-          <%= button_to "Destroy article", article_path(article), method: :delete, class: 'btn btn-sm btn-outline-danger' %>
-        </li>
-      <% end %>
     </ul>
-    <div class="card-footer text-muted">Created at: <%= article.created_at %></div>
-    <div class="card-footer text-muted">Updated at: <%= article.updated_at %></div> 
+    
+    <div class="card-footer text-muted">
+      Created at: <%= article.created_at %>; Updated at: <%= article.updated_at %>
+    </div>
   </div>
 
 <% end %>
