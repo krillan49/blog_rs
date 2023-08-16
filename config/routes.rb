@@ -15,6 +15,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   
-  get 'contacts' => 'contacts#new'
-  resource :contacts, only: [:create]
+  resource :contacts, only: [:new, :create], path_names: { :new => '' }
 end
