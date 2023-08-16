@@ -35,7 +35,7 @@
 <%= 'Пока еще нет комментариев' if @article.comments.empty? %>
 <!-- Есть лишний коммент созданный формой, по порядку последний -->
 <% @article.comments.reverse.each do |comment| %>
-  <% if comment.body.size > 0 %>
+  <% if comment.body && comment.body.size > 0 %>
     <p><b>Автор:</b> <%= comment.author %></p>
     <p><%= comment.body %></p>
     <hr>
