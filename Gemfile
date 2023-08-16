@@ -82,4 +82,5 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem "factory_bot_rails"
 end
