@@ -8,4 +8,8 @@ class Article < ApplicationRecord
   def subject
     title
   end
+
+  def last_comment # метод возврата последнего комментария(Article.find(params[:id]).comments.last ??)
+    comments.last # последний комментарий из колекции(видимо вообще всех комментов ??)
+  end
 end
