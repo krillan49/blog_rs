@@ -74,4 +74,12 @@ end
 # ========================
 # Добавлено вручную
 # ========================
+
 gem 'devise'
+
+# Тестирование:
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+end
