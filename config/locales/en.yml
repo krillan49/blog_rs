@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+
+  # ===========================
+  # добавлено
+  # ===========================
+
+  contacts:
+    contact_us: "Contact Us!"
