@@ -10,12 +10,8 @@ feature "Article Creation" do
     expect(page).to have_content I18n.t('articles.new.header')
   end
 
-  scenario "allows user to visit new article page" do
-    visit new_article_path
-
-    fill_in :article_title, with: 'Test article'
-    fill_in :article_text, with: 'Some text'
-    click_button 'Save Article'
+  scenario "allows user to create new article" do
+    create_article # наш хэлпер
 
     expect(page).to have_content I18n.t('articles.show.new_comment')
   end
