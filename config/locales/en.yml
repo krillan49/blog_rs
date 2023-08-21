@@ -37,4 +37,9 @@ en:
   # ===========================
 
   contacts:
-    contact_us: "Contact Us!"
+    contact_us: "Contact Us!!!"
+  articles:
+    new:
+      header: "Add your new article"
+    show:
+      new_comment: "Add your comment:"
