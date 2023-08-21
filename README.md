@@ -4,25 +4,9 @@ Ruby, Rails, Devise, Rspec.
 
 [Учебный проект на Ruby/Rails c курса Rubyschool](https://rubyschool.us/)
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 3.1.2p20
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 ## Start project
 
