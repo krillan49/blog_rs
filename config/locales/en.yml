@@ -43,3 +43,5 @@ en:
       header: "Add your new article"
     show:
       new_comment: "Add your comment:"
+    edit:
+      header: "Edit article"
